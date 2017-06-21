@@ -1,20 +1,20 @@
 # EduIDPlugin
 Cordova plugin to use NAIL layer of the EduID Native App
 
-##Installation
+## Installation
 ```
 cordova plugin add https://github.com/cuttazy/EduIDPlugin
 ```
 
 
-##Methods
-###authorizeProtocols(protocols, success, error)
+## Methods
+### authorizeProtocols(protocols, success, error)
 
 This method implements the protocol authorization.
 
 The method expects a list of protocol names as the first parameter.
 
-####Example:
+#### Example:
 
 ```javascript
 var protocols = [
