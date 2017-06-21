@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="ch.eduid.provacordovaplugin.EduIDPlugin"
+    version="1.0.0">
+    <name>EduIDPlugin</name>
+    <description>Cordova plugin</description>
+
+    <!-- <js-module src="www/EduIDPlugin.js" name="EduIDPlugin">
+        <clobbers target="eduid.EduIDPlugin" />
+    </js-module> -->
+
+    <asset src="www/EduIDPlugin.js" target="plugins/EduIDPlugin.js" />
+    <js-module src="www/EduIDPlugin.js" name="EduIDPlugin">
+        <clobbers target="EduIDPlugin" />
+    </js-module>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="EduIDPlugin" >
+                <param name="android-package" value="ch.eduid.provacordovaplugin.EduIDPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+        <source-file src="src/android/EduIDPlugin.java" target-dir="src/ch/eduid/provacordovaplugin" />
+
+
+        <framework src="src/android/EduID.gradle" custom="true" type="gradleReference" />
+        <resource-file src="libs/swisseduidlibrary-release.aar" target="libs/swisseduidlibrary-release.aar" />
+
+    </platform>
+
+</plugin>
+
+
