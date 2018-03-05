@@ -91,8 +91,6 @@ public class EduIDPlugin extends CordovaPlugin {
                     }
                 });
 
-                return true;
-
             }
 
             /**
@@ -264,6 +262,10 @@ public class EduIDPlugin extends CordovaPlugin {
                 callbackContext.error("Invalid action");
                 return false;
             }
+
+            return true;
+
+
         } catch(Exception e) {
             System.err.println("Exception: " + e.getMessage());
             callbackContext.error(e.getMessage());
