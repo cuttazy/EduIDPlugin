@@ -99,7 +99,17 @@ public class EduIDPlugin extends CordovaPlugin {
              * serviceNames
              */
             else if(ACTION_SERVICES_NAMES.equals(action)){
-                callbackContext.success(getNAIL().serviceNames());
+
+                String[] serviceNames = getNAIL().serviceNames();
+
+                // String ArrayList to JSONArray
+                JSONArray ret = new JSONArray();
+                for (String serviceName :
+                        serviceNames) {
+                    ret.put(serviceName);
+                }
+
+                callbackContext.success(ret);
             }
 
 
@@ -200,7 +210,8 @@ public class EduIDPlugin extends CordovaPlugin {
                  */
                 String serviceName = args_obj.getString("serviceName");
 
-                callbackContext.success(getNAIL().removeService(serviceName));
+                getNAIL().removeService(serviceName);
+                callbackContext.success();
             }
 
 
