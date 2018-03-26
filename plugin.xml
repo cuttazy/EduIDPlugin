@@ -37,6 +37,19 @@
         <resource-file src="libs/swisseduidlibrary-release.aar" target="libs/swisseduidlibrary-release.aar" />
 
     </platform>
+    
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="EduIDPlugin" >
+                <param name="ios-package" value="EduIDPlugin" onload="true"/>
+            </feature>
+        </config-file>
+        <source-file src="src/ios/EduIDPlugin.swift" target-dir="src/ch/eduid/provacordovaplugin"/>
+        <source-file src="src/ios/IdNativeAppIntegrationLayer.swift" target-dir="src/ch/eduid/provacordovaplugin"/>
+        <source-file src="src/ios/ApiContainer.swift" target-dir="src/ch/eduid/provacordovaplugin"/>
+        <source-file src="src/ios/AuthorizationContainer.swift" target-dir="src/ch/eduid/provacordovaplugin"/>
+        
+    </platform>
 
 </plugin>
 
