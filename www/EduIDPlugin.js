@@ -115,11 +115,6 @@ var EduIDPlugin = {
         );
      }
 
-
-
-
-
-
 }
 
 module.exports = EduIDPlugin;
