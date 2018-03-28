@@ -32,7 +32,7 @@ EduIDPlugin.authorizeProtocols(protocols, success, error);
 ### getServiceToken(serviceName, success, error)
 
 This method return an access token for a service.
-####Example:
+#### Example:
 
 ```javascript
 var protocols = [
