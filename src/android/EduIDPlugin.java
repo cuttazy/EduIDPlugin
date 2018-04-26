@@ -87,6 +87,9 @@ public class EduIDPlugin extends CordovaPlugin {
 
                     @Override
                     public void onAuthorizeProtocolsError(String s) {
+                        Intent openCurrentActivity = new Intent(EduIDPlugin.this.currentActivity, EduIDPlugin.this.currentActivity.getClass());
+                        openCurrentActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
+                        EduIDPlugin.this.context.startActivity(openCurrentActivity);
                         callbackContext.error(s);
                     }
                 });
